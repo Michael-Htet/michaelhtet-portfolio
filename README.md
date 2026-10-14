@@ -16,3 +16,10 @@ npm run dev        # http://localhost:3000
 npm run build      # static site in ./out
 ```
 Deploy `out/` to Vercel, Netlify, GitHub Pages, or any Nginx server.
+
+## Docker
+Multi-stage build: Node builds the static site, Nginx serves it (~77 MB image, no Node at runtime).
+```bash
+docker build -t michaelhtet-portfolio .
+docker run -d -p 8030:80 michaelhtet-portfolio
+```
